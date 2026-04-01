@@ -6,7 +6,7 @@ import {
     CheckCircle, Clock, Search, Download
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../utils/api';
 
 const AdminDashboard = () => {
     const [activeTab, setActiveTab] = useState('inquiries');
@@ -29,11 +29,9 @@ const AdminDashboard = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('adminToken');
-            const config = { headers: { Authorization: `Bearer ${token}` } };
-
             const [inqRes, galRes] = await Promise.all([
-                axios.get('/api/inquiry', config),
-                axios.get('/api/gallery')
+                api.get('/api/inquiry'),
+                api.get('/api/gallery')
             ]);
 
             setInquiries(inqRes.data || []);
@@ -54,8 +52,7 @@ const AdminDashboard = () => {
     const deleteInquiry = async (id) => {
         if (!window.confirm('Are you sure you want to delete this inquiry?')) return;
         try {
-            const token = localStorage.getItem('adminToken');
-            await axios.delete(`/api/inquiry/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+            await api.delete(`/api/inquiry/${id}`);
             setInquiries(inquiries.filter(i => i._id !== id));
         } catch (err) {
             alert('Error deleting inquiry');
@@ -86,8 +83,8 @@ const AdminDashboard = () => {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`w-full flex items-center space-x-4 px-6 py-4 rounded-lg transition-all duration-300 ${activeTab === tab.id
-                                    ? 'bg-gold text-slate-900 font-bold shadow-lg shadow-gold/20'
-                                    : 'text-cream-dark hover:bg-white/5 hover:text-white'
+                                ? 'bg-gold text-slate-900 font-bold shadow-lg shadow-gold/20'
+                                : 'text-cream-dark hover:bg-white/5 hover:text-white'
                                 }`}
                         >
                             <div className={activeTab === tab.id ? 'text-slate-900' : 'text-gold'}>

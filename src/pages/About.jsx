@@ -23,7 +23,7 @@ const About = () => {
                     >
                         <div className="relative">
                             <img
-                                src="https://images.unsplash.com/photo-1511551201850-880ef96765e8?auto=format&fit=crop&q=80&w=1200"
+                                src="/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.34%20PM.jpeg"
                                 alt="Story Image"
                                 className="w-full aspect-[4/5] object-cover rounded-sm border-[20px] border-white shadow-2xl"
                             />
@@ -56,7 +56,7 @@ const About = () => {
 
                         <div className="flex items-center space-x-4 pt-4">
                             <div className="w-16 h-16 rounded-full bg-slate-200 border-2 border-gold/20 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Founder" />
+                                <img src="/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.35%20PM.jpeg" alt="Founder" />
                             </div>
                             <div>
                                 <h4 className="font-playfair font-bold text-xl">Julian V. Rothschild</h4>
@@ -129,9 +129,9 @@ const About = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         {[
-                            { name: 'Sienna Grace', role: 'Head of Design', img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400' },
-                            { name: 'Lucas Thorne', role: 'Logistics Master', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400' },
-                            { name: 'Isabella Conti', role: 'Floral Designer', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400' }
+                            { name: 'Sienna Grace', role: 'Head of Design', img: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.30%20PM.jpeg' },
+                            { name: 'Lucas Thorne', role: 'Logistics Master', img: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.31%20PM.jpeg' },
+                            { name: 'Isabella Conti', role: 'Floral Designer', img: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.32%20PM.jpeg' }
                         ].map((member, idx) => (
                             <motion.div
                                 key={idx}

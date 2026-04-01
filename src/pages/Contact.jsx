@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
-import axios from 'axios';
+import api from '../utils/api';
 
 const Contact = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -14,7 +14,7 @@ const Contact = () => {
         setSubmitStatus(null);
         try {
             // For now, mock the API call or use relative URL if proxy is setup
-            await axios.post('/api/inquiry', data);
+            await api.post('/api/inquiry', data);
             setSubmitStatus('success');
             reset();
         } catch (err) {
@@ -26,12 +26,12 @@ const Contact = () => {
     };
 
     const contactInfo = [
-        { icon: <Phone className="text-gold" />, title: 'Call Us', value: '+1 (234) 567-890', desc: 'Mon - Fri, 9am - 6pm EST' },
-        { icon: <Mail className="text-gold" />, title: 'Email Us', value: 'hello@elegance.com', desc: 'Directly email our support team' },
-        { icon: <MapPin className="text-gold" />, title: 'Visit Us', value: '123 Luxury Ave, CA', desc: 'In-person consultations by appointment' },
+        { icon: <Phone className="text-gold" />, title: 'Call Us', value: '+91 (939) 148-4849', desc: 'Available Mon - Sun, 9am - 9pm' },
+        { icon: <Mail className="text-gold" />, title: 'Email Us', value: 'events@saevents.com', desc: 'Directly email our support team' },
+        { icon: <MapPin className="text-gold" />, title: 'Visit Us', value: 'SA Events, Kukatpally, Hyderabad', desc: 'Beside Pochamma Temple, 500072' },
     ];
 
-    const eventTypes = ['Wedding', 'Corporate Event', 'Birthday Party', 'Private Celebration', 'Engagement Party', 'Destination Event'];
+    const eventTypes = ['Weddings', 'Housewarming Ceremony', 'Social Events', 'Destination Events', 'Others'];
 
     return (
         <div className="pt-32 pb-24 bg-cream-light min-h-screen">

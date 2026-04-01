@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Building2, PartyPopper, Globe, Utensils, GlassWater, ArrowRight, Camera, Lightbulb, UserCheck } from 'lucide-react';
+import { Heart, Home, PartyPopper, Globe, Utensils, GlassWater, ArrowRight, Camera, Lightbulb, UserCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
@@ -11,26 +11,26 @@ const Services = () => {
             subtitle: 'A Modern Fairytale',
             icon: <Heart size={48} strokeWidth={1} />,
             desc: 'From intimate elopements to grand ceremonies, we curate every detail of your special day with a touch of elegance and sophistication.',
-            features: ['Full Wedding Coordination', 'Venue Selection & Design', 'Floral & Decor Planning', 'Live Entertainment & Audio', 'Travel & Guest Logistics'],
-            image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200'
+            features: ['Full Event Coordination', 'Venue Selection & Design', 'Floral & Decor Planning', 'Live Entertainment & Audio', 'Travel & Guest Logistics'],
+            image: '/saevenassests/WhatsApp%20Video%202026-02-25%20at%209.17.31%20PM.mp4'
         },
         {
-            id: 'corporate',
-            title: 'Corporate Events',
-            subtitle: 'Professional Excellence',
-            icon: <Building2 size={48} strokeWidth={1} />,
-            desc: 'Executing high-stakes corporate gatherings, product launches, and gala dinners that leave a lasting impression on your clients and stakeholders.',
-            features: ['Conferences & Seminars', 'Brand Activation Events', 'Award Ceremonies', 'Product Launches', 'Executive Retreats'],
-            image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1200'
+            id: 'housewarming',
+            title: 'Housewarming Ceremony',
+            subtitle: 'New Beginnings',
+            icon: <Home size={48} strokeWidth={1} />,
+            desc: 'Celebrate your new home with a beautiful and memorable ceremony. From traditional rituals to modern gatherings, we make your housewarming special.',
+            features: ['Traditional Rituals', 'Theme & Decor', 'Catering & Hospitality', 'Guest Management', 'Audio-Visual Setup'],
+            image: '/saevenassests/WhatsApp%20Video%202026-02-25%20at%209.17.32%20PM.mp4'
         },
         {
             id: 'parties',
-            title: 'Social Celebrations',
+            title: 'Social Events',
             subtitle: 'Unforgettable Moments',
             icon: <PartyPopper size={48} strokeWidth={1} />,
-            desc: 'Whether it\'s an milestone birthday, a themed party, or a private anniversary dinner, we bring creativity and style to every celebration.',
+            desc: 'Whether it\'s a milestone birthday, a themed party, or a private anniversary dinner, we bring creativity and style to every celebration.',
             features: ['Birthday Bashes', 'Anniversary Celebrations', 'Engagement Parties', 'Themed Events', 'Cocktail Mixers'],
-            image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=1200'
+            image: '/saevenassests/WhatsApp%20Video%202026-02-25%20at%209.17.34%20PM.mp4'
         },
         {
             id: 'destination',
@@ -39,7 +39,7 @@ const Services = () => {
             icon: <Globe size={48} strokeWidth={1} />,
             desc: 'Our reach extends beyond borders. We specialize in planning luxury events in breathtaking locations across the globe.',
             features: ['Remote Venue Scouting', 'International Logistics', 'Cultural Sensitivity', 'On-site Execution', 'VIP Guest Services'],
-            image: 'https://images.unsplash.com/photo-1502602898657-3e917247a183?auto=format&fit=crop&q=80&w=1200'
+            image: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.33%20PM%20(3).jpeg'
         }
     ];
 
@@ -92,11 +92,19 @@ const Services = () => {
                         >
                             {/* Image side */}
                             <div className="w-full lg:w-1/2 group relative aspect-[16/10] overflow-hidden rounded-sm shadow-2xl">
-                                <img
-                                    src={cat.image}
-                                    alt={cat.title}
-                                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
-                                />
+                                {cat.image.endsWith('.mp4') ? (
+                                    <video
+                                        src={cat.image}
+                                        autoPlay loop muted playsInline
+                                        className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+                                    />
+                                ) : (
+                                    <img
+                                        src={cat.image}
+                                        alt={cat.title}
+                                        className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+                                    />
+                                )}
                                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors duration-500" />
                             </div>
 

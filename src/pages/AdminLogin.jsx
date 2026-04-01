@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Lock, User, Eye, EyeOff, ShieldCheck, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../utils/api';
 
 const AdminLogin = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -18,7 +18,7 @@ const AdminLogin = () => {
 
         try {
             // For now, mock the login or use /api/login
-            const res = await axios.post('/api/auth/login', formData);
+            const res = await api.post('/api/auth/login', formData);
             localStorage.setItem('adminToken', res.data.token);
             navigate('/admin/dashboard');
         } catch (err) {
