@@ -4,10 +4,10 @@ import { Award, Users, Calendar, ShieldCheck, Sparkles, Coffee } from 'lucide-re
 
 const About = () => {
     const stats = [
-        { label: 'Years of Experience', value: '14+', icon: <Calendar strokeWidth={1} /> },
-        { label: 'Successful Events', value: '1,200+', icon: <ShieldCheck strokeWidth={1} /> },
-        { label: 'Team Experts', value: '45+', icon: <Users strokeWidth={1} /> },
-        { label: 'Industry Awards', value: '12', icon: <Award strokeWidth={1} /> },
+        { label: 'Years of Excellence', value: '26+', icon: <Calendar strokeWidth={1} /> },
+        { label: 'Successful Events', value: '2,500+', icon: <ShieldCheck strokeWidth={1} /> },
+        { label: 'Customer Rating', value: '5.0/5', icon: <Award strokeWidth={1} /> },
+        { label: 'Dedicated Experts', value: '30+', icon: <Users strokeWidth={1} /> },
     ];
 
     return (
@@ -29,7 +29,7 @@ const About = () => {
                             />
                             <div className="absolute -bottom-10 -right-10 bg-gold p-10 text-white shadow-2xl hidden md:block">
                                 <Sparkles size={48} className="mb-4" strokeWidth={1} />
-                                <p className="font-playfair text-xl italic font-medium leading-tight">"Where elegance <br /> meets execution."</p>
+                                <p className="font-playfair text-xl italic font-medium leading-tight">"Where tradition <br /> meets celebration."</p>
                             </div>
                         </div>
                     </motion.div>
@@ -41,16 +41,16 @@ const About = () => {
                         className="w-full lg:w-1/2 space-y-8"
                     >
                         <h5 className="section-subtitle">Our Journey</h5>
-                        <h2 className="section-title">Redefining Events Since 2010</h2>
+                        <h2 className="section-title">A Legacy of Celebration Since 1999</h2>
                         <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
                             <p>
-                                Founded by a team of visionary designers and logistical masters, Elegance Events was born out of a desire to bring a new level of sophistication to the event management industry.
+                                Founded in Kukatpally, SA Events began with a simple mission: to make every moment memorable. Over the past 26 years, we have grown into one of Hyderabad's most trusted names in event management and professional decoration.
                             </p>
                             <p>
-                                We believe that every celebration should be a masterpiece. Our approach combines meticulous planning with breathtaking creative direction, ensuring that every event we touch becomes an unforgettable memory for our clients and their guests.
+                                We specialize in high-end balloon art, theme decorations, and full-scale event coordination. Our legacy is built on trust, precision, and an unwavering commitment to bringing our clients' visions to life, no matter the scale.
                             </p>
                             <p className="font-medium text-slate-800">
-                                From the bustling streets of New York to the tranquil shores of Lake Como, we've traveled the world to create moments that transcend the ordinary.
+                                From intimate housewarming ceremonies to grand corporate galas, SA Events has been the creative force behind thousands of unforgettable milestones across Hyderabad.
                             </p>
                         </div>
 
@@ -59,8 +59,8 @@ const About = () => {
                                 <img src="/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.35%20PM.jpeg" alt="Founder" />
                             </div>
                             <div>
-                                <h4 className="font-playfair font-bold text-xl">Julian V. Rothschild</h4>
-                                <p className="text-xs uppercase tracking-widest text-gold font-bold">Principal Creative Director</p>
+                                <h4 className="font-playfair font-bold text-xl">M. Srinivas Goud</h4>
+                                <p className="text-xs uppercase tracking-widest text-gold font-bold">Founder & Managing Director</p>
                             </div>
                         </div>
                     </motion.div>

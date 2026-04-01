@@ -14,7 +14,7 @@ const Footer = () => {
                         Crafting unforgettable moments with a touch of luxury. From intimate ceremonies to grand celebrations, we make every detail matter.
                     </p>
                     <div className="flex space-x-6">
-                        <a href="#" className="text-cream-light hover:text-gold transition-colors"><Instagram size={24} /></a>
+                        <a href="https://www.instagram.com/m.srinivas_goud?igsh=bjlsNjBvYTdjZG5h" target="_blank" rel="noopener noreferrer" className="text-cream-light hover:text-gold transition-colors"><Instagram size={24} /></a>
                         <a href="#" className="text-cream-light hover:text-gold transition-colors"><Facebook size={24} /></a>
                         <a href="#" className="text-cream-light hover:text-gold transition-colors"><Twitter size={24} /></a>
                     </div>
@@ -26,15 +26,18 @@ const Footer = () => {
                     <ul className="space-y-4 text-cream-dark">
                         <li className="flex items-start">
                             <MapPin size={20} className="mr-3 text-gold shrink-0" />
-                            <span>SA events Kukatpally, Hyderabad</span>
+                            <span>Shop No 3-37, Sarojini Nilayam, Behind Hanuman Temple, Baghameer Street, Kukatpally, Hyderabad – 500072</span>
                         </li>
                         <li className="flex items-center">
                             <Phone size={20} className="mr-3 text-gold shrink-0" />
-                            <span>+1 (234) 567-890</span>
+                            <span>+91 93914 84849</span>
                         </li>
                         <li className="flex items-center">
                             <Mail size={20} className="mr-3 text-gold shrink-0" />
                             <span>events@saevents.com</span>
+                        </li>
+                        <li className="pt-2 border-t border-white/5 text-sm italic">
+                            Working Hours: 9:00 AM – 8:00 PM (All days)
                         </li>
                     </ul>
                 </div>

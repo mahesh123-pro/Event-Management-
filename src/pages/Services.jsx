@@ -8,10 +8,10 @@ const Services = () => {
         {
             id: 'weddings',
             title: 'Weddings',
-            subtitle: 'A Modern Fairytale',
+            subtitle: 'Traditional & Modern',
             icon: <Heart size={48} strokeWidth={1} />,
-            desc: 'From intimate elopements to grand ceremonies, we curate every detail of your special day with a touch of elegance and sophistication.',
-            features: ['Full Event Coordination', 'Venue Selection & Design', 'Floral & Decor Planning', 'Live Entertainment & Audio', 'Travel & Guest Logistics'],
+            desc: 'From intimate ceremonies to grand mandaps, we specialize in breathtaking wedding decorations, floral arrangements, and elegant stage designs.',
+            features: ['Grand Stage Decoration', 'Mandap & Floral Design', 'Doli & Entrance Setup', 'Professional Lighting', 'Custom Backdrops'],
             image: '/saevenassests/WhatsApp%20Video%202026-02-25%20at%209.17.31%20PM.mp4'
         },
         {
@@ -19,26 +19,26 @@ const Services = () => {
             title: 'Housewarming Ceremony',
             subtitle: 'New Beginnings',
             icon: <Home size={48} strokeWidth={1} />,
-            desc: 'Celebrate your new home with a beautiful and memorable ceremony. From traditional rituals to modern gatherings, we make your housewarming special.',
-            features: ['Traditional Rituals', 'Theme & Decor', 'Catering & Hospitality', 'Guest Management', 'Audio-Visual Setup'],
+            desc: 'Celebrate your new home with vibrant decorations. We offer traditional thoranams, floral accents, and modern lighting to make your entry special.',
+            features: ['Traditional Door Decor', 'Pooja Room Styling', 'Entrance Lighting', 'Guest Hospitality', 'Floral Accents'],
             image: '/saevenassests/WhatsApp%20Video%202026-02-25%20at%209.17.32%20PM.mp4'
         },
         {
             id: 'parties',
             title: 'Social Events',
-            subtitle: 'Unforgettable Moments',
+            subtitle: 'Balloon & Theme Experts',
             icon: <PartyPopper size={48} strokeWidth={1} />,
-            desc: 'Whether it\'s a milestone birthday, a themed party, or a private anniversary dinner, we bring creativity and style to every celebration.',
-            features: ['Birthday Bashes', 'Anniversary Celebrations', 'Engagement Parties', 'Themed Events', 'Cocktail Mixers'],
+            desc: 'Our primary specialization in balloon art and theme-based decorations makes us the top choice for birthdays, anniversaries, and private parties.',
+            features: ['Professional Balloon Art', 'Custom Theme Decor', 'Birthday Stage Design', 'Cake Table Styling', 'Themed Backdrops'],
             image: '/saevenassests/WhatsApp%20Video%202026-02-25%20at%209.17.34%20PM.mp4'
         },
         {
-            id: 'destination',
-            title: 'Destination Events',
-            subtitle: 'Explore the World',
+            id: 'corporate',
+            title: 'Corporate Events',
+            subtitle: 'Professional Setups',
             icon: <Globe size={48} strokeWidth={1} />,
-            desc: 'Our reach extends beyond borders. We specialize in planning luxury events in breathtaking locations across the globe.',
-            features: ['Remote Venue Scouting', 'International Logistics', 'Cultural Sensitivity', 'On-site Execution', 'VIP Guest Services'],
+            desc: 'We provide sophisticated setups for corporate galas, office parties, and product launches with high-quality branding and professional aesthetics.',
+            features: ['Branded Stage Design', 'Conference Hall Setup', 'Lighting & Audio-Visual', 'VIP Guest Logistics', 'Office Theme Decor'],
             image: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.33%20PM%20(3).jpeg'
         }
     ];

@@ -9,22 +9,22 @@ const Home = () => {
 
     const services = [
         {
-            title: 'Weddings',
+            title: 'Weddings & Stage',
             icon: <Heart strokeWidth={1} size={40} />,
-            desc: 'Enchanting ceremonies tailored to your love story.',
+            desc: 'Grand stage setups, mandaps, and elegant floral decorations.',
             color: 'gold'
         },
         {
-            title: 'Housewarming Ceremony',
-            icon: <HomeIcon strokeWidth={1} size={40} />,
-            desc: 'New beginnings in your beautiful new space.',
-            color: 'slate-900'
-        },
-        {
-            title: 'Social Events',
+            title: 'Balloon & Theme Decor',
             icon: <PartyPopper strokeWidth={1} size={40} />,
-            desc: 'Unforgettable celebrations with a touch of elegance.',
+            desc: 'Our specialty: Pro balloon art and custom theme backdrops.',
             color: 'gold'
+        },
+        {
+            title: 'Housewarming & Rituals',
+            icon: <HomeIcon strokeWidth={1} size={40} />,
+            desc: 'Traditional decor and professional lighting for your new home.',
+            color: 'slate-900'
         }
     ];
 

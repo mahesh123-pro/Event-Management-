@@ -26,9 +26,9 @@ const Contact = () => {
     };
 
     const contactInfo = [
-        { icon: <Phone className="text-gold" />, title: 'Call Us', value: '+91 (939) 148-4849', desc: 'Available Mon - Sun, 9am - 9pm' },
+        { icon: <Phone className="text-gold" />, title: 'Call Us', value: '+91 93914 84849', desc: 'Available Mon - Sun, 9am - 8pm' },
         { icon: <Mail className="text-gold" />, title: 'Email Us', value: 'events@saevents.com', desc: 'Directly email our support team' },
-        { icon: <MapPin className="text-gold" />, title: 'Visit Us', value: 'SA Events, Kukatpally, Hyderabad', desc: 'Beside Pochamma Temple, 500072' },
+        { icon: <MapPin className="text-gold" />, title: 'Visit Us', value: 'Shop No 3-37, Sarojini Nilayam, Kukatpally, Hyd', desc: 'Behind Hanuman Temple, Baghameer St, 500072' },
     ];
 
     const eventTypes = ['Weddings', 'Housewarming Ceremony', 'Social Events', 'Destination Events', 'Others'];
