@@ -28,37 +28,47 @@ const Navbar = () => {
         { name: 'Contact', path: '/contact' },
     ];
 
+    const isHomePage = location.pathname === '/';
+    const navbarStyle = scrolled 
+        ? 'bg-white/95 backdrop-blur-lg shadow-sm py-4 text-slate-900 border-b border-cream-dark' 
+        : (isHomePage ? 'bg-transparent py-6 text-cream-light' : 'bg-white/90 backdrop-blur-md py-6 text-slate-900');
+
     return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/80 backdrop-blur-lg shadow-sm py-4' : 'bg-transparent py-6'
-                }`}
-        >
-            <div className="container mx-auto px-6 flex justify-between items-center text-slate-900">
-                <Link to="/" className="text-2xl md:text-3xl font-playfair font-bold tracking-tighter">
-                    ELEGANCE<span className="text-gold">EVENTS</span>
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${navbarStyle}`}>
+            <div className="container mx-auto px-6 flex justify-between items-center">
+                <Link to="/" className="group flex items-center space-x-2">
+                    <div className="w-10 h-10 bg-gold flex items-center justify-center font-playfair font-bold text-white rounded-sm transform group-hover:rotate-12 transition-transform duration-500">SA</div>
+                    <span className="text-2xl md:text-3xl font-playfair font-bold tracking-tighter uppercase">
+                        EVENTS
+                    </span>
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center space-x-10">
+                <div className="hidden lg:flex items-center space-x-12">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             to={link.path}
-                            className={`text-sm font-medium tracking-widest uppercase transition-colors hover:text-gold ${location.pathname === link.path ? 'text-gold' : ''
-                                }`}
+                            className={`relative text-xs font-semibold tracking-[0.2em] uppercase group py-2 
+                                ${location.pathname === link.path ? 'text-gold' : (scrolled || !isHomePage ? 'text-slate-900' : 'text-cream-light hover:text-gold')}`}
                         >
                             {link.name}
+                            <span className={`absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold transition-all duration-500 group-hover:w-full ${location.pathname === link.path ? 'w-full' : ''}`} />
                         </Link>
                     ))}
-                    <Link to="/contact" className="flex items-center py-2 px-6 bg-slate-900 text-cream-light font-medium tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark">
-                        <PhoneCall size={18} className="mr-2" />
-                        Book Now
+                    <Link 
+                        to="/contact" 
+                        className={`flex items-center py-3 px-8 font-semibold tracking-widest uppercase transition-all duration-500 hover:scale-105 active:scale-95
+                            ${scrolled || !isHomePage ? 'bg-slate-900 text-cream-light hover:bg-gold-dark' : 'bg-white text-slate-900 hover:bg-gold hover:text-white'}`}
+                    >
+                        <PhoneCall size={16} className="mr-3" />
+                        Inquire
                     </Link>
                 </div>
 
                 {/* Mobile menu button */}
                 <button
-                    className="lg:hidden text-slate-900"
+                    className={`lg:hidden transition-colors ${scrolled || !isHomePage ? 'text-slate-900' : 'text-cream-light'}`}
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                 >
@@ -70,25 +80,36 @@ const Navbar = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="lg:hidden bg-white border-t border-cream-dark overflow-hidden"
+                        initial={{ opacity: 0, x: '100%' }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: '100%' }}
+                        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                        className="fixed inset-0 z-[60] lg:hidden bg-slate-900 text-cream-light"
                     >
-                        <div className="flex flex-col p-8 space-y-6 bg-cream-light">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    to={link.path}
-                                    className={`text-xl font-playfair tracking-wide border-b border-cream-dark pb-2 ${location.pathname === link.path ? 'text-gold' : 'text-slate-900'
-                                        }`}
-                                >
-                                    {link.name}
+                        <div className="p-8 h-full flex flex-col justify-between">
+                            <div className="flex justify-between items-center">
+                                <span className="text-3xl font-playfair font-bold">SA<span className="text-gold">EVENTS</span></span>
+                                <button onClick={() => setIsOpen(false)}><X size={40} className="text-gold" /></button>
+                            </div>
+
+                            <div className="flex flex-col space-y-8 text-center">
+                                {navLinks.map((link) => (
+                                    <Link
+                                        key={link.name}
+                                        to={link.path}
+                                        className={`text-4xl font-playfair tracking-wide ${location.pathname === link.path ? 'text-gold italic' : 'text-white'}`}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                ))}
+                            </div>
+
+                            <div className="space-y-8 text-center">
+                                <p className="text-gold uppercase tracking-[0.3em] font-medium text-xs">Let's Create Magic</p>
+                                <Link to="/contact" className="w-full py-5 bg-gold text-white font-bold text-center block uppercase tracking-[0.2em] rounded-sm">
+                                    Get In Touch
                                 </Link>
-                            ))}
-                            <Link to="/contact" className="w-full py-4 bg-slate-900 text-cream-light font-medium text-center uppercase tracking-widest">
-                                Get an Inquiry
-                            </Link>
+                            </div>
                         </div>
                     </motion.div>
                 )}

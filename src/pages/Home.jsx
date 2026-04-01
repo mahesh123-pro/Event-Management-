@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronRight, ArrowRight, Star, Heart, Building2, PartyPopper } from 'lucide-react';
+import { ChevronRight, ArrowRight, Star, Heart, Home as HomeIcon, PartyPopper } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -15,13 +15,13 @@ const Home = () => {
             color: 'gold'
         },
         {
-            title: 'Corporate Events',
-            icon: <Building2 strokeWidth={1} size={40} />,
-            desc: 'Seamless execution for professional brilliance.',
+            title: 'Housewarming Ceremony',
+            icon: <HomeIcon strokeWidth={1} size={40} />,
+            desc: 'New beginnings in your beautiful new space.',
             color: 'slate-900'
         },
         {
-            title: 'Private Parties',
+            title: 'Social Events',
             icon: <PartyPopper strokeWidth={1} size={40} />,
             desc: 'Unforgettable celebrations with a touch of elegance.',
             color: 'gold'
@@ -29,10 +29,10 @@ const Home = () => {
     ];
 
     const featuredGallery = [
-        { id: 1, title: 'The Royal Wedding', category: 'Wedding', image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800' },
-        { id: 2, title: 'Global Tech Summit', category: 'Corporate', image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800' },
-        { id: 3, title: 'Elite Birthday Bash', category: 'Party', image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800' },
-        { id: 4, title: 'Summer Garden Gala', category: 'Private', image: 'https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80&w=800' },
+        { id: 1, title: 'Heritage Bride Entry', category: 'Weddings', image: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.33%20PM%20(2).jpeg' },
+        { id: 2, title: 'Golden House Lighting', category: 'Housewarming Ceremony', image: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.32%20PM.jpeg' },
+        { id: 3, title: 'Outdoor Gala Night', category: 'Social Events', image: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.33%20PM.jpeg' },
+        { id: 4, title: 'Grand Mall Launch', category: 'Social Events', image: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.30%20PM.jpeg' },
     ];
 
     return (
@@ -44,13 +44,37 @@ const Home = () => {
                     className="absolute inset-0 z-0 bg-slate-900"
                 >
                     <img
-                        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2070"
-                        alt="Luxury Wedding Setup"
-                        className="w-full h-full object-cover opacity-60"
+                        src="/saevenassests/hero-bg.png"
+                        alt="Event Background"
+                        className="w-full h-full object-cover opacity-40"
                     />
                 </motion.div>
+                <div className="absolute inset-0 bg-slate-900/50 z-1" />
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-transparent to-slate-900/95 z-1" />
 
-                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-transparent to-slate-900/80 z-1" />
+                {/* Decorative Elements */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none z-1">
+                    <motion.div 
+                        animate={{ 
+                            scale: [1, 1.2, 1],
+                            opacity: [0.1, 0.2, 0.1],
+                            x: [0, 50, 0],
+                            y: [0, -30, 0]
+                        }}
+                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                        className="absolute -top-[10%] -left-[5%] w-[40%] aspect-square rounded-full bg-gold/20 blur-[120px]" 
+                    />
+                    <motion.div 
+                        animate={{ 
+                            scale: [1.2, 1, 1.2],
+                            opacity: [0.1, 0.2, 0.1],
+                            x: [0, -50, 0],
+                            y: [0, 30, 0]
+                        }}
+                        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                        className="absolute bottom-[5%] -right-[5%] w-[35%] aspect-square rounded-full bg-gold/10 blur-[100px]" 
+                    />
+                </div>
 
                 <div className="container mx-auto px-6 relative z-10 text-center space-y-8">
                     <motion.p
@@ -65,10 +89,10 @@ const Home = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold text-cream-light leading-[1.1] tracking-tight drop-shadow-2xl"
+                        className="text-5xl md:text-7xl lg:text-9xl font-playfair font-bold text-cream-light leading-[1] tracking-tighter max-w-5xl mx-auto"
                     >
-                        Crafting Unforgettable <br className="hidden md:block" />
-                        <span className="italic font-medium text-gold">Experiences</span>
+                        Crafting <span className="italic font-medium text-gold drop-shadow-sm">Unforgettable</span> <br className="hidden md:block" />
+                        Moments
                     </motion.h1>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -86,13 +110,19 @@ const Home = () => {
                 </div>
 
                 <motion.div
-                    initial={{ opacity: 0.3 }}
-                    animate={{ opacity: 0, y: 100 }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 1 }}
+                    className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-4"
                 >
-                    <div className="w-[1px] h-20 bg-gradient-to-b from-transparent to-white/50" />
-                    <span className="text-[10px] uppercase tracking-[0.3em] mt-4 font-inter">Scroll</span>
+                    <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+                        <motion.div 
+                            animate={{ y: [0, 12, 0] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                            className="w-1 h-3 bg-gold rounded-full" 
+                        />
+                    </div>
+                    <span className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-medium">Explore</span>
                 </motion.div>
             </section>
 
@@ -157,7 +187,7 @@ const Home = () => {
                                     alt={item.title}
                                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                                     <span className="text-gold text-xs uppercase tracking-widest mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">{item.category}</span>
                                     <h4 className="text-xl font-playfair font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-200">{item.title}</h4>
                                 </div>
@@ -179,11 +209,11 @@ const Home = () => {
                         <div className="bg-white p-12 shadow-sm border border-cream-dark italic text-center relative">
                             <Star className="text-gold fill-gold absolute -top-4 left-1/2 -translate-x-1/2" size={32} />
                             <p className="text-2xl text-slate-800 leading-relaxed font-playfair mb-8">
-                                "Working with Elegance Events was a dream. They took our vague ideas and turned them into a breathtaking reality for our wedding. Every detail was curated with such perfection that our guests are still talking about it!"
+                                "Working with SAevents was a dream. They took our vague ideas and turned them into a breathtaking reality for our wedding. Every detail was curated with such perfection that our guests are still talking about it!"
                             </p>
                             <div className="flex flex-col items-center">
                                 <div className="w-16 h-16 rounded-full bg-slate-200 mb-4 overflow-hidden border-2 border-gold/20">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Client" />
+                                    <img src="/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.35%20PM.jpeg" alt="Client" />
                                 </div>
                                 <h6 className="font-playfair font-bold text-lg not-italic">Alexandra & Michael</h6>
                                 <p className="text-xs uppercase tracking-widest text-gold font-medium mt-1">Napa Valley Wedding</p>
@@ -195,19 +225,19 @@ const Home = () => {
 
             {/* CTA Section */}
             <section className="py-24 relative overflow-hidden">
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0 bg-slate-900">
                     <img
-                        src="https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80&w=2070"
+                        src="/saevenassests/hero-bg.png"
+                        alt="Event Background"
                         className="w-full h-full object-cover opacity-20 grayscale"
-                        alt="Decoration"
                     />
                     <div className="absolute inset-0 bg-gold/5" />
                 </div>
                 <div className="container mx-auto px-6 relative z-10 text-center space-y-12">
-                    <h2 className="text-4xl md:text-6xl font-playfair font-bold text-slate-900 leading-snug">
+                    <h2 className="text-4xl md:text-6xl font-playfair font-bold text-cream-light leading-snug">
                         Ready to Create an <span className="text-gold italic">Unforgettable</span> Event?
                     </h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                    <p className="text-cream-dark/80 max-w-2xl mx-auto text-lg leading-relaxed">
                         Let's discuss how we can turn your vision into a masterpiece. Our team handles every detail, so you can enjoy every moment.
                     </p>
                     <Link to="/contact" className="btn-premium rounded-full inline-block">

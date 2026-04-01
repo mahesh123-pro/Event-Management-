@@ -10,7 +10,7 @@ const LoadingScreen = () => {
                 transition={{ duration: 1, repeat: Infinity, repeatType: 'reverse' }}
                 className="text-4xl md:text-5xl font-playfair font-bold tracking-tighter"
             >
-                ELEGANCE<span className="text-gold">EVENTS</span>
+                SA<span className="text-gold">EVENTS</span>
             </motion.div>
             <div className="w-48 h-[2px] bg-cream-dark overflow-hidden rounded-full">
                 <motion.div
@@ -21,7 +21,7 @@ const LoadingScreen = () => {
                 />
             </div>
             <p className="text-xs uppercase tracking-[0.5em] text-slate-500 font-medium animate-pulse">
-                Crafting Perfection
+                Catering to Your Every Event
             </p>
         </div>
     );

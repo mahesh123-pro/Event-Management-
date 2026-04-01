@@ -8,7 +8,7 @@ const Footer = () => {
                 {/* Brand */}
                 <div className="space-y-6">
                     <h2 className="text-3xl font-playfair font-bold tracking-tighter">
-                        ELEGANCE<span className="text-gold">EVENTS</span>
+                        SA<span className="text-gold">EVENTS</span>
                     </h2>
                     <p className="text-cream-dark leading-relaxed">
                         Crafting unforgettable moments with a touch of luxury. From intimate ceremonies to grand celebrations, we make every detail matter.
@@ -26,7 +26,7 @@ const Footer = () => {
                     <ul className="space-y-4 text-cream-dark">
                         <li className="flex items-start">
                             <MapPin size={20} className="mr-3 text-gold shrink-0" />
-                            <span>123 Luxury Avenue, Beverly Hills, CA 90210</span>
+                            <span>SA events Kukatpally, Hyderabad</span>
                         </li>
                         <li className="flex items-center">
                             <Phone size={20} className="mr-3 text-gold shrink-0" />
@@ -34,7 +34,7 @@ const Footer = () => {
                         </li>
                         <li className="flex items-center">
                             <Mail size={20} className="mr-3 text-gold shrink-0" />
-                            <span>events@elegance.com</span>
+                            <span>events@saevents.com</span>
                         </li>
                     </ul>
                 </div>
@@ -69,7 +69,7 @@ const Footer = () => {
             </div>
 
             <div className="container mx-auto px-6 pt-10 text-center text-cream-dark text-sm tracking-widest uppercase">
-                <p>&copy; {new Date().getFullYear()} Elegance Events Management. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} SAevents Management. All rights reserved.</p>
             </div>
         </footer>
     );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Filter, X, ZoomIn, Camera } from 'lucide-react';
-import axios from 'axios';
+import api from '../utils/api';
 
 const Gallery = () => {
     const [images, setImages] = useState([]);
@@ -10,24 +10,24 @@ const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const categories = ['All', 'Wedding', 'Corporate', 'Party', 'Private'];
+    const categories = ['All', 'Social Events', 'Housewarming Ceremony', 'Weddings'];
 
     const fallbackImages = [
-        { id: 1, title: 'The Royal Wedding', category: 'Wedding', imageUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800' },
-        { id: 2, title: 'Global Tech Summit', category: 'Corporate', imageUrl: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800' },
-        { id: 3, title: 'Elite Birthday Bash', category: 'Party', imageUrl: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800' },
-        { id: 4, title: 'Summer Garden Gala', category: 'Private', imageUrl: 'https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80&w=800' },
-        { id: 5, title: 'Corporate Gala', category: 'Corporate', imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800' },
-        { id: 6, title: 'Elegant Sunset Ceremony', category: 'Wedding', imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800' },
-        { id: 7, title: 'Rooftop Mixer', category: 'Party', imageUrl: 'https://images.unsplash.com/photo-1496333036608-3f24aff08d81?auto=format&fit=crop&q=80&w=800' },
-        { id: 8, title: 'Luxury Dinner Party', category: 'Private', imageUrl: 'https://images.unsplash.com/photo-1467453278283-6a7102e88ad7?auto=format&fit=crop&q=80&w=800' },
+        { id: 1, title: 'SAevents Grand Launch', category: 'Social Events', imageUrl: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.30%20PM.jpeg' },
+        { id: 2, title: 'Golden Glow Housewarming', category: 'Housewarming Ceremony', imageUrl: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.32%20PM.jpeg' },
+        { id: 3, title: 'Krithi\'s Birthday Celebration', category: 'Social Events', imageUrl: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.35%20PM.jpeg' },
+        { id: 4, title: 'The Royal Bride Entry', category: 'Weddings', imageUrl: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.33%20PM%20(2).jpeg' },
+        { id: 5, title: 'Modern Villa Lighting', category: 'Housewarming Ceremony', imageUrl: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.31%20PM.jpeg' },
+        { id: 6, title: 'Outdoor Gala Gathering', category: 'Social Events', imageUrl: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.33%20PM.jpeg' },
+        { id: 7, title: 'Cinematic Stage Setup', category: 'Social Events', imageUrl: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.33%20PM%20(1).jpeg' },
+        { id: 8, title: 'Heritage Swan Palanquin', category: 'Weddings', imageUrl: '/saevenassests/WhatsApp%20Image%202026-02-25%20at%209.17.34%20PM.jpeg' },
     ];
 
     useEffect(() => {
         const fetchImages = async () => {
             setLoading(true);
             try {
-                const res = await axios.get('/api/gallery');
+                const res = await api.get('/api/gallery');
                 if (res.data && res.data.length > 0) {
                     setImages(res.data);
                     setFilteredImages(res.data);
@@ -79,8 +79,8 @@ const Gallery = () => {
                                 key={cat}
                                 onClick={() => setActiveFilter(cat)}
                                 className={`px-8 py-3 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-300 border ${activeFilter === cat
-                                        ? 'bg-slate-900 border-slate-900 text-white shadow-xl shadow-slate-200'
-                                        : 'bg-white border-cream-dark text-slate-500 hover:border-gold hover:text-gold'
+                                    ? 'bg-slate-900 border-slate-900 text-white shadow-xl shadow-slate-200'
+                                    : 'bg-white border-cream-dark text-slate-500 hover:border-gold hover:text-gold'
                                     }`}
                             >
                                 {cat}
@@ -114,7 +114,7 @@ const Gallery = () => {
                                     alt={img.title}
                                     className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
+                                <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
                                     <ZoomIn className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-50 transition-opacity" size={48} strokeWidth={1} />
                                     <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                         <span className="text-gold text-xs uppercase tracking-widest mb-1 block font-medium">#{img.category}</span>
